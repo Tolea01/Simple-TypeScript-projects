@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import LaunchIcon from '@mui/icons-material/Launch';
-import { Button, Box, Container, Stack } from '@mui/material';
+import {Box, Button, Container, Stack} from '@mui/material';
 import CloseOutlinedIcon from '@mui/icons-material/CloseOutlined';
 
 const classes = {
@@ -53,17 +53,17 @@ function App() {
         <Stack>
           <Button
             variant='outlined'
-            sx={{ marginTop: '300px' }}
+            sx={{marginTop: '300px'}}
             onClick={(): void => setShow(true)}
-            startIcon={<LaunchIcon />}>
+            startIcon={<LaunchIcon/>}>
             Open Modal
-          </Button >
+          </Button>
         </Stack>
-      </Container >
-      <Box sx={show ? classes.overlay : null} />
-      <Box sx={show ? classes.modal : null} >
+      </Container>
+      <Box sx={show ? classes.overlay : null}/>
+      <Box sx={show ? classes.modal : null}>
         <CloseOutlinedIcon
-          sx={classes.closeButton}
+          sx={show ? classes.closeButton : classes.inactive}
           onClick={(): void => setShow(!show)}
         />
       </Box>
