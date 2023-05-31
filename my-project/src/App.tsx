@@ -1,8 +1,9 @@
 import React from 'react';
+import {UserList} from "./UserList/UserList";
 
 function App() {
   return (
-    <h1>Hello World!!!</h1>
+    <UserList/>
   );
 }
 
