@@ -1,12 +1,10 @@
 import React from 'react';
-import { UserList } from "./UserList/UserList";
-import { Container } from '@mui/material';
+
+// Тут список пользователей: https://reqres.in/api/users
 
 function App() {
   return (
-    <Container>
-      <UserList />
-    </Container>
+    <h1>app</h1>
   );
 }
 
