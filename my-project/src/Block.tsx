@@ -53,7 +53,7 @@ interface Props {
   onChangeCurrency: (value: string) => void,
 }
 
-export const Block: React.FC<Props> = (props) => {
+export const Block: React.FC<Props> = (props: Props) => {
   return (
     <Box display="flex" flexDirection="column" mr={props.mr}>
       <StyledList>

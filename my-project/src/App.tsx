@@ -19,23 +19,34 @@ function App() {
   const onChangeFromPrice = (value: number) => {
     const price = value / rates[fromCurrency];
     const result = price * rates[toCurrency];
-    setToPrice(result);
+    const toPriceValue = parseFloat(result.toFixed(2));
+
+    if (!isNaN(toPriceValue)) {
+      setToPrice(toPriceValue);
+    }
+
     setFromPrice(value);
   };
 
   const onChangeToPrice = (value: number) => {
     const result = (rates[fromCurrency] / rates[toCurrency]) * value;
-    setFromPrice(result);
+    const fromPriceValue = parseFloat(result.toFixed(2));
+
+    if (!isNaN(fromPriceValue)) {
+      setFromPrice(fromPriceValue);
+    }
+
     setToPrice(value);
   };
 
-  // React.useEffect(() => {
-  //   onChangeFromPrice(fromPrice)
-  // }, [fromCurrency, fromPrice])
 
-  // React.useEffect(() => {
-  //   onChangeToPrice(toPrice)
-  // }, [toCurrency, toPrice])
+  React.useEffect(() => {
+    onChangeFromPrice(fromPrice)
+  }, [fromCurrency])
+
+  React.useEffect(() => {
+    onChangeToPrice(toPrice)
+  }, [toCurrency])
 
   return (
     <Stack
